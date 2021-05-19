@@ -1,25 +1,14 @@
-require('./db/mongoose')
-const User = require('./db/models/user');
+const express = require('express')
+const port = 3000
 
-const createUser = async (data) => {
-    try{
-        const user = new User(data)
-        await user.save()
-        console.log(`Created ${user}.`)
-    } catch (error) {
-        console.log(error);
-    }
-}
+const app = express()
+app.set('view engine', 'hbs')
 
-const findUser = async (data) => {
-    try{
-        const user = User.find({data})
-    } catch (error) {
-        console.log(error);
-    }
-}
-
-createUser({
-    name: 'Wojtek',
-    password: '1234'
+app.get('/', (req, res) => {
+    res.render('login')
 })
+
+app.get('/board', (req, res) => {
+    res.render('board')
+})
+app.listen(port)
