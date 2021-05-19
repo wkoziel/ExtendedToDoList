@@ -1,11 +1,12 @@
 require('./mongoose')
 const User = require('./models/user');
+const Card = require('./models/card')
 
 const createUser = async (data) => {
     try{
         const user = new User(data)
         await user.save()
-        console.log(`Created ${user}.`)
+        console.log(`Created ${user}`)
     } catch (error) {
         console.log(error);
     }
@@ -13,7 +14,7 @@ const createUser = async (data) => {
 
 const findUser = async (data) => {
     try{
-        const user = User.find({data})
+        const user = await User.find(data)
     } catch (error) {
         console.log(error);
     }
@@ -21,13 +22,49 @@ const findUser = async (data) => {
 
 const getUsers = async () => {
     try {
-        return User.find({})
+        const users = await User.find({}) 
+        console.log(users);
+        return users
     } catch (error) {
         console.log(error);
     }
 }
 
-createUser({
-    name: 'Wojtek',
-    password: '1234'
-})
+
+const createCard = async (data) =>{
+    try {
+        const card = new Card(data)
+        await card.save()
+        console.log(`Created: ${card}`)
+    } catch (error) {
+        console.log(error)
+    }
+}
+
+const findCards = async (data) => {
+    try {
+        const cards = await Card.find(data)
+        console.log(cards);
+        return cards
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+// findCards({
+//     user: 'Wojtek'
+// })
+
+
+
+// createCard({
+//     user: 'Wojtek',
+//     text: 'Zadanie numer 2'
+// })
+
+
+
+// createUser({
+//     name: 'Wojtek',
+//     password: '1234'
+// })
