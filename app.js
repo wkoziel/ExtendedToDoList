@@ -4,7 +4,7 @@ const queries = require('./db/queries')
 
 //VARIABLES
 const port = 3000
-let user = ''
+let user = 'wojtek'
 const app = express()
 
 //SETUP
