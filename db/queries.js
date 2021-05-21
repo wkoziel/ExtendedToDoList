@@ -7,6 +7,7 @@ const createUser = async (data) => {
         const user = new User(data)
         await user.save()
         console.log(`Created ${user}`)
+        return user
     } catch (error) {
         console.error(error);
     }

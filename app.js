@@ -1,5 +1,4 @@
 //REQUIRE
-const { ObjectID } = require('bson')
 const express = require('express')
 const queries = require('./db/queries')
 
