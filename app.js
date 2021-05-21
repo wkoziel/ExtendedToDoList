@@ -1,12 +1,14 @@
+//REQUIRE
 const { ObjectID } = require('bson')
 const express = require('express')
-const findCards = require('./db/queries')
 const queries = require('./db/queries')
 
+//VARIABLES
 const port = 3000
 let user = ''
 const app = express()
 
+//SETUP
 app.set('view engine', 'ejs')
 app.use(express.static(__dirname + '/public'))
 app.use(express.urlencoded({extended: false}))
