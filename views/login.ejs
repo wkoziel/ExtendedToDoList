@@ -1,1 +1,27 @@
-<%= console.log(result.data) %>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logowanie</title>
+</head>
+<body>
+    <%= message %> 
+    <h1>Logowanie</h1>
+    <form action="/login" method="POST">
+        <div class="container">
+            <div>
+                <label for="name">Login</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div>
+                <label for="password">Hasło</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Zaloguj</button>
+        </div>
+    </form>
+    <a href="/register">Rejestracja</a>
+</body>
+</html>

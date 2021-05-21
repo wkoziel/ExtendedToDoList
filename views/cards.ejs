@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona główna</title>
+    <link href="/css/cards.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <h1>Jesteś zalogowany jako <%= user %> </h1>
+    <% if (cards){  %> 
+        <% cards.forEach(card => { %>
+            <div class="card">
+                <h4>Treść: <%= card.text %></h4>
+                <h5>Użytkownik <%= card.user %> <br></h5>
+            </div>
+        <% }); %> 
+    <% } %> 
+    <a href="/logout">Wyloguj</a>
+</body>
+</html>

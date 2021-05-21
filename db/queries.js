@@ -8,13 +8,14 @@ const createUser = async (data) => {
         await user.save()
         console.log(`Created ${user}`)
     } catch (error) {
-        console.log(error);
+        console.error(error);
     }
 }
 
 const findUser = async (data) => {
     try{
-        const user = await User.find(data)
+        const user = await User.findOne(data)
+        return user
     } catch (error) {
         console.log(error);
     }
@@ -43,15 +44,17 @@ const createCard = async (data) =>{
 
 const findCards = async (data) => {
     try {
-        const cards = await Card.find(data)
-        console.log(cards)
+        const cards = await Card.findOne(data)
         return cards
     } catch (error) {
         console.log(error);
     }
 }
 
-module.exports = findCards
+module.exports = {findCards,
+    createUser,
+    findUser
+    }
 
 // findCards({
 //     user: 'Wojtek'
@@ -60,8 +63,8 @@ module.exports = findCards
 
 
 // createCard({
-//     user: 'Wojtek',
-//     text: 'Zadanie numer 2'
+//     name: 'Wojtek',
+//     text: 'Zadanie numer 3'
 // })
 
 
