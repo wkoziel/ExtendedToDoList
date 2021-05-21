@@ -8,16 +8,13 @@
     <link href="/css/cards.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>Jesteś zalogowany jako <%= user %> </h1>
-    <% if (cards){  %> 
-        <% cards.forEach(card => { %>
-            <div class="card">
-                <h4>Treść: <%= card.text %></h4>
-                <h5>Użytkownik <%= card.user %> <br></h5>
-            </div>
-        <% }); %> 
-    <% } %> 
-    <a href="/logout">Wyloguj</a>
-    <a href="/addCard">Dodaj zadanie</a>
+    <div class="container">
+        <div class="menu">
+            <h5> Witaj, <%= user %> </h5>
+        </div>
+        <div class="tasks">
+
+        </div>
+    </div>
 </body>
 </html>

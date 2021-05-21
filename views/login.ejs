@@ -5,23 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logowanie</title>
+    <link href="/css/form.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <%= message %> 
-    <h1>Logowanie</h1>
-    <form action="/login" method="POST">
-        <div class="container">
-            <div>
-                <label for="name">Login</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div>
-                <label for="password">Hasło</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit">Zaloguj</button>
+    <div class="box">
+        <div class="message">
+            <%= message %> 
         </div>
-    </form>
-    <a href="/register">Rejestracja</a>
+        <h1>Logowanie</h1>
+        <form action="/login" method="POST">
+            <div class="container">
+                <div>
+                    <input type="text" id="name" name="name" placeholder="Wprowadź login" required>
+                </div>
+                <div>
+                    <input type="password" id="password" name="password" placeholder="Wprowadź hasło" required>
+                </div>
+                <button type="submit">Zaloguj</button>
+            </div>
+        </form>
+        <a href="/register">Nie masz konta? Kliknij tutaj!</a>
+    </div>
 </body>
 </html>

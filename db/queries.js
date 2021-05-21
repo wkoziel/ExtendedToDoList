@@ -60,21 +60,3 @@ module.exports = {findCards,
     findUser,
     createCard
     }
-
-// findCards({
-//     user: 'Wojtek'
-// })
-
-
-
-// createCard({
-//     name: 'Wojtek',
-//     text: 'Zadanie numer 3'
-// })
-
-
-
-// createUser({
-//     name: 'Wojtek',
-//     password: '1234'
-// })

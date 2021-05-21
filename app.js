@@ -61,7 +61,7 @@ app.post('/register', async (req, res) =>{
             password: req.body.password
         })
         if (newUser) {
-            res.render('login', {message: "Rejestracja powiodła się!"})
+            res.render('login', {message: "Zarejestrowano pomyślnie!"})
         } else {
             res.render('register', {message: "Rejestracja nie powiodła się!"})
         }
