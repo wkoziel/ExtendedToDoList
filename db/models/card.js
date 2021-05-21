@@ -14,6 +14,10 @@ const cardSchema = new mongoose.Schema({
     text:{
         type: String,
         required: true
+    },
+    date:{
+        type: Date,
+        required: true
     }
 })
 

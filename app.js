@@ -79,5 +79,29 @@ app.get('/cards', async (req, res) => {
     res.render('cards', {cards: cards, user: user})
 })
 
+//ADD CARD
+app.get('/addCard', async (req, res) =>{
+    res.render('addCard', {message: undefined})
+})
+
+app.post('/addCard', async (req, res) =>{
+    if (user === '') res.redirect('/login')
+    try {
+        const card = await queries.createCard({
+            name: user,
+            text: req.body.text,
+            date: req.body.date
+        })
+        if (card){
+            res.render('addCard', {message: 'Zdanie zostało dodane'})
+        } else {
+            res.render('addCard', {message: 'Nie udało się utworzyć zadania'})
+        }
+    } catch (e) {
+        console.error(e)
+        res.render('addCard', {message: 'Nie udało się utworzyć zadania'})
+    }
+})
+
 
 app.listen(port)

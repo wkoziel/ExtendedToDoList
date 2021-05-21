@@ -2,6 +2,7 @@ require('./mongoose')
 const User = require('./models/user');
 const Card = require('./models/card')
 
+//USER
 const createUser = async (data) => {
     try{
         const user = new User(data)
@@ -32,12 +33,13 @@ const getUsers = async () => {
     }
 }
 
-
+//CARDS
 const createCard = async (data) =>{
     try {
         const card = new Card(data)
         await card.save()
         console.log(`Created: ${card}`)
+        return card
     } catch (error) {
         console.log(error)
     }
@@ -45,7 +47,8 @@ const createCard = async (data) =>{
 
 const findCards = async (data) => {
     try {
-        const cards = await Card.findOne(data)
+        const cards = await Card.find(data)
+        console.log(cards);
         return cards
     } catch (error) {
         console.log(error);
@@ -54,7 +57,8 @@ const findCards = async (data) => {
 
 module.exports = {findCards,
     createUser,
-    findUser
+    findUser,
+    createCard
     }
 
 // findCards({

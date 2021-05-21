@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="Pl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dodaj zadanie</title>
+</head>
+<body>
+    <%= message %> 
+    <h1>Dodaj zadanie</h1>
+    <form action="/addCard" method="POST">
+        <div class="container">
+            <div>
+                <label for="text">Treść</label>
+                <textarea id="text" name="text" rows="4" required></textarea>
+            </div>
+            <div>
+                <label for="date">Data</label>
+                <input type="date" id="date" name="date" required>
+            </div>
+            <button type="submit">Dodaj</button>
+        </div>
+    </form>
+    <a href="/cards">Strona głowna</a>
+</body>
+</html>
