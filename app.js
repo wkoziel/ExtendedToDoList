@@ -5,12 +5,11 @@ const queries = require('./db/queries')
 const port = 3000
 
 const app = express()
-app.set('view engine', 'pug')
+app.set('view engine', 'ejs')
 
-app.get('/', (req, res) => {
-    // let cards = findCards({user: 'Wojtek'}).then((value) =>
-    // console.log(`App: ${value}`))
-    res.render('login', {results: cards})
+app.get('/', async (req, res) => {
+    const data = await findCards({user: 'Wojtek'})
+    res.render('login', {result: data})
 })
 
 app.get('/board', (req, res) => {

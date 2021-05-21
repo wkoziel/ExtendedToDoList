@@ -44,6 +44,7 @@ const createCard = async (data) =>{
 const findCards = async (data) => {
     try {
         const cards = await Card.find(data)
+        console.log(cards)
         return cards
     } catch (error) {
         console.log(error);
