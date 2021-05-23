@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: 'Nunito', sans-serif;
+    background-image: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+    background-size: contain;
+    display: grid;
+    grid-template-columns: 1 3;
+    height: 100vh;
+}
+
+
