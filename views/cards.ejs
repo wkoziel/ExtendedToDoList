@@ -16,50 +16,47 @@
                 <img src="/images/user-alt-solid.svg" alt="icon" />
                 <h5> Witaj, <%= user %>! </h5>
             </div>
-            <div class="link">
-                <a href="/addCard"> Dodaj nowe zadanie </a>
+            <div class="stats">
+                <p>Podsumowanie: </p>
+                Zdania do zrobienia: 2 <br>
+                Zdania w trakcie: 2 <br>
+                Zdania gotowe: 2 <br>
             </div>
-            <div class="link">
-                Link 2
-            </div>
-            <div class="link">
-                Link 3
-            </div>
-            <div class="link">
-                Link 4
-            </div>
-            <div class="link">
+            <div class="center">
+                <a href="/addCard">Nowe zadanie</a>
+                <a href="/">Zmień hasło</a>
                 <a href="/logout"> Wyloguj </a>
             </div>
+
         </div>
         <div class="tasks">
 
             <div class="todo">
                 <% cards.forEach(card => { %>
-                    <% if (card.column === 'todo') {%> 
+                    <% if (card.column === 1) {%> 
                     <div class="card">
                         <p class="text"> <%= card.text %></p>
-                        <h5> Termin: <%= card.date.toLocaleDateString() %> </h5>
+                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
                     </div>
                     <% }}); %> 
             </div>
 
             <div class="inprogress">
                 <% cards.forEach(card => { %>
-                    <% if (card.column === 'inprogress') {%> 
+                    <% if (card.column === 2) {%> 
                     <div class="card">
                         <p class="text"> <%= card.text %></p>
-                        <h5> Termin: <%= card.date.toLocaleDateString() %> </h5>
+                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
                     </div>
                     <% }}); %> 
             </div>
 
             <div class="done">
                 <% cards.forEach(card => { %>
-                    <% if (card.column === 'done') {%> 
+                    <% if (card.column === 3) {%> 
                     <div class="card">
                         <p class="text"> <%= card.text %></p>
-                        <h5> Termin: <%= card.date.toLocaleDateString() %> </h5>
+                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
                     </div>
                     <% }}); %> 
             </div>
