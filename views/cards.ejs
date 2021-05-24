@@ -32,6 +32,7 @@
         <div class="tasks">
 
             <div class="todo">
+                <h1>Do zrobienia:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 1) {%> 
                     <div class="card">
@@ -42,6 +43,7 @@
             </div>
 
             <div class="inprogress">
+                <h1>W trakcie:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 2) {%> 
                     <div class="card">
@@ -52,6 +54,7 @@
             </div>
 
             <div class="done">
+                <h1>Zrobione:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 3) {%> 
                     <div class="card">
