@@ -5,23 +5,27 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dodaj zadanie</title>
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href="/css/form.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/images/to-do.png" type="image/x-icon">
 </head>
-<body>
-    <%= message %> 
+    <div class="task-box box">
+        <div class="message">
+            <%= message %> 
+        </div>
     <h1>Dodaj zadanie</h1>
     <form action="/addCard" method="POST">
         <div class="container">
             <div>
-                <label for="text">Treść</label>
-                <textarea id="text" name="text" rows="4" required></textarea>
+                <textarea id="text" name="text" rows="10"  placeholder="Wprowadź treść zadania" required></textarea>
             </div>
             <div>
-                <label for="date">Data</label>
-                <input type="date" id="date" name="date" required>
+                <input type="date" id="date" name="date"  required>
             </div>
-            <button type="submit">Dodaj</button>
+            <button type="submit">Dodaj zadanie</button>
         </div>
     </form>
-    <a href="/cards">Strona głowna</a>
+    <a href="/cards">Powróć do strony głownej</a>
+    </div>
 </body>
 </html>

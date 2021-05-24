@@ -6,10 +6,8 @@ const cardSchema = new mongoose.Schema({
         required: true,
     },
     column:{
-        type: Number,
-        min: 0,
-        max: 3,
-        default: 0,
+        type: String,
+        default: 'todo'
     },
     text:{
         type: String,
