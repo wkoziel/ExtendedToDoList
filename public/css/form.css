@@ -5,8 +5,8 @@ h1 {
 
 .box{
     width:350px;
+    height: fit-content;
     border-radius: 25px;
-    margin:150px auto;
     background-color: white;
     border-radius: 15px;
     display: flex;

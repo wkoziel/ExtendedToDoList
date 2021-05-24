@@ -1,23 +1,79 @@
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap');
 
-body{
-    padding: 0;
-    margin: 0;
-    font-family: 'Nunito', sans-serif;
-    background-color:  #5d8fc9;
+* {
+    border-radius: 25px;
+}
+.container{
+    width: 90%;
+    height: 90%;
+    background-color: rgb(238, 238, 238);
     display: grid;
-    grid-template-columns: 1 3;
+    grid-template-columns: auto auto auto auto;
+    padding: 1%;
 }
 
+/* MENU */
 .menu {
-    border-radius: 25px;
-    margin:150px auto;
-    background-color: white;
+    columns: 1;
+    /* border: red dotted 1px; */
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.tasks{
-    columns: 2;
-    border-radius: 25px;
-    margin:150px auto;
+.menu img{
+    width: 100px;
+}
+
+.user-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     background-color: white;
+    height: 20%;
+    width: 100%;
+    padding-top: 10%;
+    overflow: hidden;
+}
+
+.menu .link {
+    width: 100%;
+    background-color: white;
+    height: 10%;
+    margin: 5% 0 0 0;
+    text-align: center;
+}
+
+.user-box h5 {
+    font-size: 1.5em;
+    margin: 5%;
+}
+
+/* TASKS */
+.tasks{
+    grid-column-start: 2;
+    grid-column-end: span 4;
+    padding: 1%;
+    border: red dotted 1px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 1%;
+}
+
+.card {
+    width: 100%;
+    border: black 1px solid;
+}
+
+.todo {
+    grid-column-start: 1;
+}
+
+.inprogress {
+    grid-column-start: 2;
+}
+
+.done {
+    grid-column-start: 3;
 }

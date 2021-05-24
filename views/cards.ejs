@@ -7,14 +7,68 @@
     <title>Strona główna</title>
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link href="/css/cards.css" rel="stylesheet" type="text/css">
+    <link rel="icon" href="/images/to-do.png" type="image/x-icon">
 </head>
 <body>
     <div class="container">
         <div class="menu">
-            <h5> Witaj, <%= user %> </h5>
+            <div class="user-box">
+                <img src="/images/user-alt-solid.svg" alt="icon" />
+                <h5> Witaj, <%= user %>! </h5>
+            </div>
+            <div class="link">
+                Link 1
+            </div>
+            <div class="link">
+                Link 2
+            </div>
+            <div class="link">
+                Link 3
+            </div>
+            <div class="link">
+                Link 4
+            </div>
+            <div class="link">
+                Link 5
+            </div>
         </div>
         <div class="tasks">
-            Text
+            <div class="todo">
+                <div class="card">
+                    Nie robione
+                </div>
+                <div class="card">
+                    Nie robione
+                </div>
+            </div>
+            <div class="inprogress">
+                <div class="card">
+                    W trackie
+                </div>
+                <div class="card">
+                    W trackie
+                </div>
+                <div class="card">
+                    W trackie
+                </div>
+                <div class="card">
+                    W trackie
+                </div>
+                <div class="card">
+                    W trackie
+                </div>
+
+            </div>        
+            <div class="done">
+                <div class="card">
+                    Zrobione
+                </div>
+                <div class="card">
+                    Zrobione
+                </div>
+            </div>
+
+
         </div>
     </div>
 </body>
