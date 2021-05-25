@@ -45,9 +45,9 @@
                         <p class="text"> <%= card.text %></p>
                         <div class="cont">
                             <div class="nav">
-                                <a class="dropdown-content" href="#"> W trakcie &nbsp</a>
-                                <a class="dropdown-content" href="#"> Zrobione &nbsp</a>
-                                <a class="dropdown-content" href="#"> Usuń &nbsp</a>
+                                <a class="dropdown-content" href="/" onclick="funct(<%= card._id %>)"> W trakcie &nbsp</a>
+                                <a class="dropdown-content" href="/"> Zrobione &nbsp</a>
+                                <a class="dropdown-content" href="/"> Usuń &nbsp</a>
                             </div>
                             <p class="date"> Do: <%= card.date.toLocaleDateString() %> </p>
                         </div>
