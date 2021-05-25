@@ -17,10 +17,16 @@
                 <h5> Witaj, <%= user %>! </h5>
             </div>
             <div class="stats">
+                <% let a = 0, b = 0, c = 0%> 
+                <% cards.forEach(card => { %>
+                    <% if(card.column == 1) a += 1 %>
+                    <% if(card.column == 2) b += 1 %>
+                    <% if(card.column == 3) c += 1 %>
+                <% }) %> 
                 <p>Podsumowanie: </p>
-                Zdania do zrobienia: 2 <br>
-                Zdania w trakcie: 2 <br>
-                Zdania gotowe: 2 <br>
+                Zdania do zrobienia: <%= a %>  <br>
+                Zdania w trakcie: <%= b %> <br>
+                Zdania gotowe: <%= c %> <br>
             </div>
             <div class="center">
                 <a href="/addCard">Nowe zadanie</a>
@@ -35,9 +41,16 @@
                 <h1>Do zrobienia:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 1) {%> 
-                    <div class="card">
+                    <div class="card dropdown">
                         <p class="text"> <%= card.text %></p>
-                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
+                        <div class="cont">
+                            <div class="nav">
+                                <a class="dropdown-content" href="#"> W trakcie &nbsp</a>
+                                <a class="dropdown-content" href="#"> Zrobione &nbsp</a>
+                                <a class="dropdown-content" href="#"> Usuń &nbsp</a>
+                            </div>
+                            <p class="date"> Do: <%= card.date.toLocaleDateString() %> </p>
+                        </div>
                     </div>
                     <% }}); %> 
             </div>
@@ -59,7 +72,7 @@
                     <% if (card.column === 3) {%> 
                     <div class="card">
                         <p class="text"> <%= card.text %></p>
-                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
+                        <h5 class="date"> Do: <%= card.date.toLocaleDateString() %> </h5>
                     </div>
                     <% }}); %> 
             </div>
