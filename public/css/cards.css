@@ -164,3 +164,7 @@
     text-align: right;
     font-weight: bold;
 }
+
+.text-done{
+    text-decoration: line-through;
+}

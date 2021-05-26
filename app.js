@@ -42,6 +42,23 @@ app.post('/login', async (req, res) => {
     }
 })
 
+//CHANGE PASSWORD
+app.get('/changePassword', (req, res) =>{
+    res.render('changePassword', {message: undefined})
+})
+
+app.post('/changePassword', async (req, res) =>{
+    try {
+        await queries.changePassword({
+            user: user,
+            password: req.body.password})
+        res.render('changePassword', {message: 'Zmiana hasła powiodła się!'})
+    } catch (error) {
+        console.log(error);
+        res.render('changePassword', {message: 'Zmiana hasła nie powiodła się!'})
+    }
+})
+
 //LOGOUT
 app.get('/logout', (req, res) =>{
     user = ''

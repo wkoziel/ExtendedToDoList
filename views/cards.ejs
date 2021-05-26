@@ -31,7 +31,7 @@
             </div>
             <div class="center">
                 <a href="/addCard">Nowe zadanie</a>
-                <a href="/">Zmień hasło</a>
+                <a href="/changePassword">Zmień hasło</a>
                 <a href="/logout"> Wyloguj </a>
             </div>
 
@@ -79,7 +79,7 @@
                 <% cards.forEach(card => { %>
                     <% if (card.column === 3) {%> 
                         <div class="card dropdown">
-                            <p class="text"> <%= card.text %></p>
+                            <p class="text text-done"> <%= card.text %></p>
                             <div class="inner-box">
                                 <div class="options">
                                     <a class="dropdown-content" href="/toToDo/<%= card.id %> "> Do zrobienia &nbsp</a>

@@ -25,11 +25,10 @@ const findUser = async (data) => {
     }
 }
 
-const getUsers = async () => {
+// PASSWORD CHANGE
+const changePassword = async (data) => {
     try {
-        const users = await User.find({}) 
-        console.log(users);
-        return users
+        await User.updateOne({name: data.user}, {$set : {password: data.password}})
     } catch (error) {
         console.log(error);
     }
@@ -100,5 +99,6 @@ module.exports = {findCards,
     moveToInProgress,
     moveToToDo,
     moveToDone,
-    deleteCard
+    deleteCard,
+    changePassword
     }
