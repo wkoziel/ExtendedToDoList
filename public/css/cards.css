@@ -124,7 +124,7 @@
     padding-right: 5%;
 }
 
-.cont{
+.inner-box{
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -139,7 +139,7 @@
     border-radius: 30px;
 }
 
-.nav{
+.options{
     display: inline;
     visibility: hidden;
     margin-left: 5%;
@@ -151,7 +151,7 @@
 
 }
 
-.dropdown:hover .nav {
+.dropdown:hover .options {
     visibility: visible;
 }
 

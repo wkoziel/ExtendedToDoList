@@ -8,6 +8,7 @@
     <link href="/css/style.css" rel="stylesheet" type="text/css">
     <link href="/css/cards.css" rel="stylesheet" type="text/css">
     <link rel="icon" href="/images/to-do.png" type="image/x-icon">
+    <!-- <script src="/scripts/functions.js" defer></script> -->
 </head>
 <body>
     <div class="container">
@@ -43,11 +44,11 @@
                     <% if (card.column === 1) {%> 
                     <div class="card dropdown">
                         <p class="text"> <%= card.text %></p>
-                        <div class="cont">
-                            <div class="nav">
-                                <a class="dropdown-content" href="/" onclick="funct(<%= card._id %>)"> W trakcie &nbsp</a>
-                                <a class="dropdown-content" href="/"> Zrobione &nbsp</a>
-                                <a class="dropdown-content" href="/"> Usuń &nbsp</a>
+                        <div class="inner-box">
+                            <div class="options">
+                                <a class="dropdown-content" href="/toInProgress/<%= card.id %> "> W trackie &nbsp</a>
+                                <a class="dropdown-content" href="/toDone/<%= card.id %> "> Gotowe &nbsp</a>
+                                <a class="dropdown-content" href="/delete/<%= card.id %> "> Usuń &nbsp</a>
                             </div>
                             <p class="date"> Do: <%= card.date.toLocaleDateString() %> </p>
                         </div>
@@ -59,10 +60,17 @@
                 <h1>W trakcie:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 2) {%> 
-                    <div class="card">
-                        <p class="text"> <%= card.text %></p>
-                        <h5 class="date"> Termin: <%= card.date.toLocaleDateString() %> </h5>
-                    </div>
+                        <div class="card dropdown">
+                            <p class="text"> <%= card.text %></p>
+                            <div class="inner-box">
+                                <div class="options">
+                                    <a class="dropdown-content" href="/toToDo/<%= card.id %> "> Do zrobienia &nbsp</a>
+                                    <a class="dropdown-content" href="/toDone/<%= card.id %> "> Gotowe &nbsp</a>
+                                    <a class="dropdown-content" href="/delete/<%= card.id %> "> Usuń &nbsp</a>
+                                </div>
+                                <p class="date"> Do: <%= card.date.toLocaleDateString() %> </p>
+                            </div>
+                        </div>
                     <% }}); %> 
             </div>
 
@@ -70,10 +78,17 @@
                 <h1>Zrobione:</h1>
                 <% cards.forEach(card => { %>
                     <% if (card.column === 3) {%> 
-                    <div class="card">
-                        <p class="text"> <%= card.text %></p>
-                        <h5 class="date"> Do: <%= card.date.toLocaleDateString() %> </h5>
-                    </div>
+                        <div class="card dropdown">
+                            <p class="text"> <%= card.text %></p>
+                            <div class="inner-box">
+                                <div class="options">
+                                    <a class="dropdown-content" href="/toToDo/<%= card.id %> "> Do zrobienia &nbsp</a>
+                                    <a class="dropdown-content" href="/toInProgress/<%= card.id %> "> W trackie &nbsp</a>
+                                    <a class="dropdown-content" href="/delete/<%= card.id %> "> Usuń &nbsp</a>
+                                </div>
+                                <p class="date"> Do: <%= card.date.toLocaleDateString() %> </p>
+                            </div>
+                        </div>
                     <% }}); %> 
             </div>
 

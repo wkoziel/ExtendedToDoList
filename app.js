@@ -103,5 +103,34 @@ app.post('/addCard', async (req, res) =>{
     }
 })
 
+// UPDATE CARDS
+app.get('/toToDo/:id', async (req, res) => {
+    try {
+        await queries.moveToToDo(req.params.id)
+        res.redirect('/cards')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/toInProgress/:id', async (req, res) => {
+    try {
+        await queries.moveToInProgress(req.params.id)
+        res.redirect('/cards')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+app.get('/toDone/:id', async (req, res) => {
+    try {
+        await queries.moveToDone(req.params.id)
+        res.redirect('/cards')
+    } catch (error) {
+        console.log(error)
+    }
+})
+
+
 
 app.listen(port)

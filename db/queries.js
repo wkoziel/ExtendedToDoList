@@ -1,6 +1,8 @@
 require('./mongoose')
+const obiectid = require('mongodb').ObjectID
 const User = require('./models/user');
 const Card = require('./models/card')
+
 
 //USER
 const createUser = async (data) => {
@@ -49,16 +51,44 @@ const findCards = async (data) => {
     try {
         const cards = await Card.find(data)
         cards.sort((a, b) => parseFloat(a.column) - parseFloat(b.column));
-        console.log(cards)
         return cards
     } catch (error) {
         console.log(error);
     }
 }
 
+const moveToToDo = async (data) => {
+    try {
+        id = obiectid.ObjectID(data)
+        await Card.updateOne({_id: id}, {$set : {column: 1}})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const moveToInProgress = async (data) => {
+    try {
+        id = obiectid.ObjectID(data)
+        await Card.updateOne({_id: id}, {$set : {column: 2}})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const moveToDone = async (data) => {
+    try {
+        id = obiectid.ObjectID(data)
+        await Card.updateMany({_id: id}, {$set : {column: 3}})
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 module.exports = {findCards,
     createUser,
     findUser,
-    createCard
+    createCard,
+    moveToInProgress,
+    moveToToDo,
+    moveToDone
     }
