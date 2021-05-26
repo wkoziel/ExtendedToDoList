@@ -131,6 +131,14 @@ app.get('/toDone/:id', async (req, res) => {
     }
 })
 
-
+//DELETE CARD
+app.get('/delete/:id', async (req, res) => {
+    try {
+        await queries.deleteCard(req.params.id)
+        res.redirect('/cards')
+    } catch (error) {
+        console.log(error)
+    }
+})
 
 app.listen(port)

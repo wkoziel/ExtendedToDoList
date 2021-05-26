@@ -7,7 +7,7 @@
     height: 90%;
     background-color: rgba(255, 255, 255, 0.342);
     display: grid;
-    grid-template-columns: 25% auto;
+    grid-template-columns: 22% auto;
     padding: 1%;
 }
 

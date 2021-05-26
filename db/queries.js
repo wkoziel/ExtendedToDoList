@@ -84,11 +84,21 @@ const moveToDone = async (data) => {
     }
 }
 
+const deleteCard = async (data) => {
+    try {
+        id = obiectid.ObjectID(data)
+        await Card.deleteOne({_id: id})
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {findCards,
     createUser,
     findUser,
     createCard,
     moveToInProgress,
     moveToToDo,
-    moveToDone
+    moveToDone,
+    deleteCard
     }
