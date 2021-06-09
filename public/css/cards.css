@@ -20,6 +20,7 @@
     justify-content: stretch;
     align-items: stretch;
     padding: 0% 2%;
+    margin-top: 5%;
 }
 
 /* Profile */
@@ -36,6 +37,7 @@
     width: 100%;
     padding-top: 10%;
     overflow: hidden;
+    box-shadow: 5px 5px rgba(128, 128, 128, 0.726);
 }
 
 .user-box h5 {
@@ -53,6 +55,7 @@
     background-color: white;
     margin: 5% 0 0 0;
     text-align: center;
+    box-shadow: 5px 5px rgba(128, 128, 128, 0.726);
 }
 .menu .stats p {
     font-size: 1.5em;
@@ -69,6 +72,7 @@
     justify-content: center;
     align-self: stretch;
     padding: 5% 0;
+    box-shadow: 5px 5px rgba(128, 128, 128, 0.726);
 }
 
 .menu a:hover {
@@ -118,6 +122,7 @@
 .text {
     padding: 0 5%;
     display: block;
+    font-weight: 500;
 }
 
 .date{
@@ -143,12 +148,13 @@
     display: inline;
     visibility: hidden;
     margin-left: 5%;
+    text-decoration: none;
 }
 
 .dropdown-content {
     text-decoration: none;
     text-align: center;
-
+    color: gray;
 }
 
 .dropdown:hover .options {
@@ -159,6 +165,11 @@
     color: gray;
     float: left;
 }
+
+a:hover{
+    transform: scale(1.05);
+}
+
 
 .date {
     text-align: right;
