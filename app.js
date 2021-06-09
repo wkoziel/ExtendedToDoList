@@ -44,18 +44,23 @@ app.post('/login', async (req, res) => {
 
 //CHANGE PASSWORD
 app.get('/changePassword', (req, res) =>{
-    res.render('changePassword', {message: undefined})
+    res.render('changePassword', {message: undefined, nick: user})
 })
 
 app.post('/changePassword', async (req, res) =>{
     try {
-        await queries.changePassword({
-            user: user,
-            password: req.body.password})
-        res.render('changePassword', {message: 'Zmiana hasła powiodła się!'})
+        if(req.body.password === req.body.password2){
+            await queries.changePassword({
+                user: user,
+                password: req.body.password})
+            res.render('changePassword', {message: 'Zmiana hasła powiodła się!', nick: user})
+        }
+        else{
+            res.render('changePassword', {message: 'Hasła nie są takie same!', nick: user})
+        }
     } catch (error) {
         console.log(error);
-        res.render('changePassword', {message: 'Zmiana hasła nie powiodła się!'})
+        res.render('changePassword', {message: 'Zmiana hasła nie powiodła się!', nick: user})
     }
 })
 
@@ -72,17 +77,21 @@ app.get('/register', (req, res) => {
 
 app.post('/register', async (req, res) =>{
     try {
-        const newUser = await queries.createUser({
-            name: req.body.name,
-            email: req.body.email,
-            password: req.body.password
-        })
-        if (newUser) {
-            res.render('login', {message: "Zarejestrowano pomyślnie!"})
-        } else {
-            res.render('register', {message: "Rejestracja nie powiodła się!"})
+        if (req.body.password === req.body.password2){
+            const newUser = await queries.createUser({
+                name: req.body.name,
+                email: req.body.email,
+                password: req.body.password
+            })
+            if (newUser) {
+                res.render('login', {message: "Zarejestrowano pomyślnie!"})
+            } else {
+                res.render('register', {message: "Rejestracja nie powiodła się!"})
+            }
         }
-        
+        else{
+            res.render('register', {message: "Hasła nie są takie same!"})
+        }     
     } catch (error) {
         console.log(error)
         res.render('register', {message: "Rejestracja nie powiodła się!"})
