@@ -31,17 +31,20 @@
 - User system implemented with registration form
 - Ability to add your own tasks
 
-
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/44378819/121866842-9d235f80-ccff-11eb-8b65-0587dc2da8dd.png)
 
 
 ## Setup
 Project requires instalations of node.js and packages included in package.json. You can do it by using this commmend:
-`npm install`
+```
+npm install
+```
 
 The next step is to start your local server:
-`npm run devStart`
+```
+npm run devStart
+```
 
 
 ## Project Status
@@ -59,7 +62,7 @@ To do:
 - Better statistics
 
 ## Acknowledgements
-- This project was inspired by Trello.com
+- This project was inspired by [Trello](https://trello.com/pl)
 
 
 ## Contact
