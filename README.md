@@ -30,6 +30,7 @@
 ## Features
 - User system implemented with registration form
 - Ability to add your own tasks
+- Task managing
 
 ## Screenshots
 ![image](https://user-images.githubusercontent.com/44378819/121866842-9d235f80-ccff-11eb-8b65-0587dc2da8dd.png)
@@ -60,7 +61,7 @@ Room for improvement:
 To do:
 - Task editing
 - Better statistics
-- More accurate stats
+
 
 ## Acknowledgements
 - This project was inspired by [Trello](https://trello.com/pl)
