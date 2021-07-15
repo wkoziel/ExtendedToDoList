@@ -60,6 +60,7 @@ Room for improvement:
 To do:
 - Task editing
 - Better statistics
+- More accurate stats
 
 ## Acknowledgements
 - This project was inspired by [Trello](https://trello.com/pl)
