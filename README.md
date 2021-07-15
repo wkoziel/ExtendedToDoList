@@ -11,7 +11,6 @@
 * [Room for Improvement](#room-for-improvement)
 * [Acknowledgements](#acknowledgements)
 * [Contact](#contact)
-<!-- * [License](#license) -->
 
 
 ## General Information
@@ -21,10 +20,10 @@
 
 
 ## Technologies Used
-- Express - version 4.17.1
-- MongoDB - version 3.6.6
-- Mongoose - version 5.12.9
-- EJS - version 3.1.6
+- **Express** - version 4.17.1
+- **MongoDB** - version 3.6.6
+- **Mongoose** - version 5.12.9
+- **EJS** - version 3.1.6
 
 
 ## Features
